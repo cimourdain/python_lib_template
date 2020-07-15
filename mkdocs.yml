@@ -1,0 +1,26 @@
+site_name: Lib Name
+site_description: Lib Description
+site_author: Lib Author
+site_url: "https://lib_name.readthedocs.io/"
+
+repo_name: github_username/repo_name
+repo_url: https://github.com/github_username/repo_name
+edit_uri: ""
+
+dev_addr: "0.0.0.0:8000"
+
+theme:
+  name: 'material'
+
+markdown_extensions:
+  - codehilite
+  - admonition
+  - codehilite
+  - pymdownx.snippets  # to include file content in doc
+  - pymdownx.superfences  # for code blocks in Admonition blocks
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - Home: index.md

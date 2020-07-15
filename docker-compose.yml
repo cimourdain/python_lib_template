@@ -1,0 +1,16 @@
+version: "2.3"
+
+services:
+    development:
+        # FIXME use the PROJECT_DIRECTORY env var
+        environment:
+           - PYTHONPATH=/home/${PROJECT_NAME}/app/
+        image: ${PROJECT_NAME}/dev:${PYVERSION}
+        user: ${PROJECT_NAME}
+        working_dir: /home/${PROJECT_NAME}/app/
+        container_name: ${PROJECT_NAME}-dev-${PYVERSION}
+        command: bash -c "poetry install"
+        ports:
+            - "8000:8000"
+        volumes:
+            - ${PWD}/:/home/${PROJECT_NAME}/app/

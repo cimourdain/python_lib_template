@@ -1,0 +1,5 @@
+[report]
+fail_under = 50.0
+
+[html]
+directory = htmlcov
