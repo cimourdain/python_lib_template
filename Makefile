@@ -11,11 +11,9 @@ ISORT_FOLDERS = $(PROJECT_NAME) tests samples
 MYPY_FOLDERS = $(PROJECT_NAME)
 
 
-.PHONY: shell
 shell:
 	$(DOCKER_RUN) bash
 
-.PHONY: init
 init:
 	docker build --pull \
 		--rm \
@@ -33,33 +31,28 @@ init:
 	# create container and intsall lib
 	$(DOCKER_CMD_ENV_VARS) docker-compose run development
 
-.PHONY: test
 test:
 	$(DOCKER_RUN) bash -c "poetry run pytest --cov=$(PROJECT_NAME) tests/ -x"
 
-.PHONY: format
 format:
 	$(DOCKER_RUN) bash -c "poetry run black $(BLACK_FOLDERS) && poetry run isort -rc $(ISORT_FOLDERS)"
 
-.PHONY: style
 style:
 	$(DOCKER_RUN) bash -c "poetry run black $(BLACK_FOLDERS) --check --diff && poetry run isort --check-only -rc $(ISORT_FOLDERS) && poetry run mypy $(MYPY_FOLDERS)"
 
-.PHONY: docs
 docs:
 	$(DOCKER_RUN) bash -c "poetry run mkdocs build --clean"
 
 
-.PHONY: docs-serve
 docs-serve:
 	# use docker inspect to find the ip where the doc is rendered
 	$(DOCKER_RUN) bash -c "PYTHONPATH=. poetry run mkdocs serve"
 
-.PHONY: ci
 ci: style test docs
 
-.PHONY: clean
 clean:
 	bash scripts/docker stop_running_containers ${PROJECT_NAME}*
 	bash scripts/docker remove_containers ${PROJECT_NAME}*
 	bash scripts/docker clean_images ${PROJECT_NAME}*
+
+.PHONY: shell init test format style docs docs-serve ci clean
