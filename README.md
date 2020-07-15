@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/cimourdain/python_lib_template.svg?branch=master)](https://travis-ci.com/cimourdain/python_lib_template)
 [![Documentation Status](https://readthedocs.org/projects/python-lib-template/badge/?version=latest)](https://python-lib-template.readthedocs.io/en/latest/?badge=latest)
 ![docker](https://badgen.net/badge/icon/docker?icon=docker&label)
-![docker](https://badgen.net/badge/packaging/poetry/cyan)
+![poetry](https://badgen.net/badge/packaging/poetry/cyan)
 [![black](https://badgen.net/badge/code%20style/black/000)](https://github.com/ambv/black)
 [![mypy](https://badgen.net/badge/code%20style/mypy/pink)](https://github.com/python/mypy)
 
