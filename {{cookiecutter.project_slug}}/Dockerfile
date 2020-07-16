@@ -51,6 +51,8 @@ RUN if ! $(awk -F':' '{print $3}' /etc/group |grep -q ${USER_GID}) ; then groupa
 # create user
 RUN useradd -rm -g ${USER_GID} -G sudo -u ${USER_UID} ${USER_NAME}
 
+RUN mkdir ${PROJECT_DIRECTORY}
+RUN chown ${USER_NAME}:${USER_GID} ${PROJECT_DIRECTORY}
 USER ${USER_NAME}
 WORKDIR ${PROJECT_DIRECTORY}
 
@@ -76,7 +78,8 @@ RUN poetry config virtualenvs.path "{cache-dir}/virtualenvs"  # /path/to/cache/d
 # ##################################################
 # # INSTALL PROJECT DEPENDENCIES (no dev)
 # ##################################################
-COPY poetry.lock pyproject.toml ./
+COPY pyproject.toml poetry.lock* ./
+RUN poetry lock
 RUN poetry install --no-dev
 
 

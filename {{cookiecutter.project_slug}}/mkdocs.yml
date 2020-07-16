@@ -1,10 +1,10 @@
-site_name: Lib Name
-site_description: Lib Description
-site_author: Lib Author
-site_url: "https://lib_name.readthedocs.io/"
+site_name: {{cookiecutter.project_name}}
+site_description: {{cookiecutter.project_description}}
+site_author: {{cookiecutter.author}}
+site_url: "https://{{cookiecutter.git_repo_name}}.readthedocs.io/"
 
-repo_name: github_username/repo_name
-repo_url: https://github.com/github_username/repo_name
+repo_name: {{cookiecutter.git_repo_name}}
+repo_url: {{cookiecutter.repository_url}}
 edit_uri: ""
 
 dev_addr: "0.0.0.0:8000"

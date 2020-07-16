@@ -1,6 +1,6 @@
-PROJECT_NAME = lib_name
-PYVERSION ?= 3.6.10
-POETRY_VERSION ?= 1.0.9
+PROJECT_NAME = {{cookiecutter.project_slug}}
+PYVERSION ?= {{cookiecutter.default_python_version}}
+POETRY_VERSION ?= {{cookiecutter.poetry_version}}
 
 DOCKER_CONTAINER_NAME = $(APP_NAME)-$(PYVERSION)
 DOCKER_CMD_ENV_VARS = PROJECT_NAME=$(PROJECT_NAME) PYVERSION=$(PYVERSION)

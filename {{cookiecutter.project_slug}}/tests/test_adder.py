@@ -1,4 +1,4 @@
-from lib_name import adder
+from {{cookiecutter.project_slug}} import adder
 
 
 def test_adder():

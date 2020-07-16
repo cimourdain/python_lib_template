@@ -1,0 +1,29 @@
+{
+    "project_name": "My Python Lib",
+    "project_description": "Project description",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "version": "0.0.1",
+    "author": "Author Name",
+    "git_user": "git_username",
+    "git_repo_name": "{{cookiecutter.project_slug}}",
+    "repository_url": "https://github.com/{{cookiecutter.git_user}}/{{cookiecutter.git_repo_name}}",
+    "license": [
+	    "Apache-2.0",
+	    "BSD-2-Clause",
+	    "BSD-3-Clause",
+	    "BSD-4-Clause",
+	    "GPL-2.0-only",
+	    "GPL-2.0-or-later",
+	    "GPL-3.0-only",
+	    "GPL-3.0-or-later",
+	    "LGPL-2.1-only",
+	    "LGPL-2.1-or-later",
+	    "LGPL-3.0-only",
+	    "LGPL-3.0-or-later",
+	    "MIT"
+    ],
+    "python_versions": "3.6.10,3.7.8,3.8.3",
+    "default_python_version": "{{ cookiecutter.python_versions.split(',')[0] }}",
+    "poetry_version": "1.0.9",
+    "docker_compose_version": "1.25.5"
+}
