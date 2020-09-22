@@ -22,7 +22,7 @@ Dockerized python lib template using poetry.
 Set your project lib name:
 
  - rename lib_name folder
- - update project name & settings in pyproject.toml, Makefile, mkdocs.yml
+ - update project name & settings in pyproject.toml, Makefile, mkdocs.yml & LICENCE
 
 Define the python versions you want your lib to run:
 
