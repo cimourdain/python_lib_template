@@ -1,6 +1,6 @@
 def adder(a: int, b: int) -> int:
     """
-    Adds two integers
+    Add two integers.
 
     Arguments:
         a: an integer
